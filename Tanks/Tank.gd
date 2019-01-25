@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 signal health_changed
 signal dead
+signal shoot
 
 export (PackedScene) var Bullet
 export (int) var speed
@@ -16,6 +17,13 @@ var alive = true
 func _ready():
 	$GunTimer.wait_time = gun_cooldown
 	
+func shoot():
+	if can_shoot:
+		can_shoot = false
+		$GunTimer.start()
+		var dir = Vector2(1, 0).rotated($Turret.global_rotation)
+		emit_signal('shoot', Bullet, $Turret/Muzzle.global_position, dir)
+		
 func control(delta):
 	pass
 

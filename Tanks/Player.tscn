@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Tanks/Tank.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Tanks/Player.gd" type="Script" id=2]
-[ext_resource path="res://assets/onlyObjects_retina.png" type="Texture" id=3]
+[ext_resource path="res://Bullets/PlayerBullet.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/onlyObjects_retina.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -11,8 +12,10 @@ extents = Vector2( 42.4231, 38.6065 )
 
 [node name="Player" instance=ExtResource( 1 )]
 
+collision_layer = 5
 script = ExtResource( 2 )
-Bullet = null
+_sections_unfolded = [ "Collision", "collision" ]
+Bullet = ExtResource( 3 )
 speed = 200
 rotation_speed = 1.0
 gun_cooldown = 0.4
@@ -20,7 +23,7 @@ health = 100
 
 [node name="Body" parent="." index="0"]
 
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 region_enabled = true
 region_rect = Rect2( 308, 262, 80, 84 )
 _sections_unfolded = [ "Region" ]
@@ -31,8 +34,7 @@ shape = SubResource( 1 )
 
 [node name="Turret" parent="." index="2"]
 
-editor/display_folded = false
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 offset = Vector2( 20, 0 )
 region_enabled = true
 region_rect = Rect2( 684, 14, 60, 24 )
