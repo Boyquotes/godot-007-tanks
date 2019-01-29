@@ -1,4 +1,4 @@
-extends "res://Tanks/Tank.gd"
+extends "res://tanks/Tank.gd"
 
 onready var parent = get_parent()
 
@@ -15,6 +15,7 @@ func control(delta):
 		parent.set_offset(parent.get_offset() + speed * delta)
 		position = Vector2()
 	else:
+		# other movement code
 		pass
 
 func _process(delta):
@@ -25,7 +26,6 @@ func _process(delta):
 
 func _on_DetectRadius_body_entered(body):
 	target = body
-
 
 func _on_DetectRadius_body_exited(body):
 	if body == target:

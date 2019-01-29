@@ -14,7 +14,7 @@ func start(_position, _direction):
 
 func _process(delta):
 	position += velocity * delta
-	
+
 func explode():
 	queue_free()
 
