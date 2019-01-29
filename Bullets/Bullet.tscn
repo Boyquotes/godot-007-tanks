@@ -21,9 +21,9 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
-speed = null
+speed = 50
 damage = null
-lifetime = null
+lifetime = 100.0
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

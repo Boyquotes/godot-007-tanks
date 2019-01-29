@@ -65,10 +65,13 @@ lookahead = 4.0
 
 [node name="EnemyTank" parent="Paths/Path2D/PathFollow2D" index="0" instance=ExtResource( 4 )]
 
+position = Vector2( -0.0710449, 2.04932 )
 gun_cooldown = 0.4
 health = 100
 detect_radius = 400
 
 [connection signal="shoot" from="Player" to="." method="_on_Tank_shoot"]
+
+[connection signal="shoot" from="Player" to="." method="_on_Player_shoot" flags=3]
 
 

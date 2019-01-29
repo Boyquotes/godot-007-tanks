@@ -33,6 +33,9 @@ func _physics_process(delta):
 	control(delta)
 	move_and_slide(velocity)
 	
+func _on_GunTimer_timeout():
+	can_shoot = true
+	
 	
 	
 	
