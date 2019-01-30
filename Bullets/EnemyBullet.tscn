@@ -1,52 +1,31 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Bullets/EnemyBullet.gd" type="Script" id=1]
+[ext_resource path="res://Bullets/Bullet.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/onlyObjects_retina.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 11.9222, 6.19032 )
 
-[node name="EnemyBullet" type="Area2D"]
+[node name="EnemyBullet" instance=ExtResource( 1 )]
 
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
 collision_layer = 8
-collision_mask = 2
-audio_bus_override = false
-audio_bus_name = "Master"
-script = ExtResource( 1 )
+collision_mask = 3
 _sections_unfolded = [ "Collision" ]
-__meta__ = {
-"_edit_group_": true
-}
-speed = null
-damage = null
-lifetime = null
+speed = 750
+damage = 10
+lifetime = 0.6
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
+[node name="Sprite" parent="." index="0"]
 
-rotation = -3.14159
+scale = Vector2( -1, 1 )
 texture = ExtResource( 2 )
-region_enabled = true
-region_rect = Rect2( 308, 375, 29, 17 )
-_sections_unfolded = [ "Transform" ]
+region_rect = Rect2( 309, 376, 26, 14 )
+_sections_unfolded = [ "Region", "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="1"]
 
 shape = SubResource( 1 )
-
-[node name="Lifetime" type="Timer" parent="." index="2"]
-
-process_mode = 1
-wait_time = 1.0
-one_shot = false
-autostart = false
-
-[connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]
 
 
