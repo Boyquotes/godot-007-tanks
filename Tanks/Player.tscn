@@ -54,7 +54,7 @@ position = Vector2( 49.0605, 0.695892 )
 texture = ExtResource( 4 )
 offset = Vector2( 28, 0 )
 region_rect = Rect2( 644, 94, 50, 40 )
-_sections_unfolded = [ "Offset", "Visibility" ]
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="Camera2D" type="Camera2D" parent="." index="4"]
 

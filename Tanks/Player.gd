@@ -16,3 +16,4 @@ func control(delta):
 		velocity /= 2.0
 	if Input.is_action_just_pressed('click'):
 		shoot()
+		

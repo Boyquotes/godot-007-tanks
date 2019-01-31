@@ -12,13 +12,12 @@ func _ready():
 	$DetectRadius/CollisionShape2D.shape = circle
 	$DetectRadius/CollisionShape2D.shape.radius = detect_radius
 
-func control(delta):
-	if $LookAhead.is_colliding() || $LookAhead2.is_colliding():
-		speed = lerp(speed, 0, 0.1)
-	else:
-		speed = lerp(speed, max_speed, 0.05)
-		
+func control(delta):		
 	if parent is PathFollow2D:
+		if $LookAhead.is_colliding() || $LookAhead2.is_colliding():
+			speed = lerp(speed, 0, 0.1)
+		else:
+			speed = lerp(speed, max_speed, 0.05)
 		parent.set_offset(parent.get_offset() + speed * delta)
 		position = Vector2()
 	else:
