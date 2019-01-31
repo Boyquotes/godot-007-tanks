@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://maps/Map.gd" type="Script" id=1]
 [ext_resource path="res://terrain/terrain_tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://tanks/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://tanks/EnemyTank.tscn" type="PackedScene" id=4]
+[ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -46,9 +47,11 @@ _sections_unfolded = [ "Cell", "Visibility" ]
 
 [node name="Player" parent="." index="1" instance=ExtResource( 3 )]
 
-position = Vector2( 1941.57, 1312.05 )
+position = Vector2( 2221.02, 1850.8 )
 
 [node name="Paths" type="Node2D" parent="." index="2"]
+
+editor/display_folded = true
 
 [node name="Path2D" type="Path2D" parent="Paths" index="0"]
 
@@ -89,6 +92,8 @@ loop = true
 lookahead = 4.0
 
 [node name="EnemyTank" parent="Paths/Path2D2/PathFollow2D" index="0" instance=ExtResource( 4 )]
+
+[node name="HUD" parent="." index="3" instance=ExtResource( 5 )]
 
 [connection signal="shoot" from="Player" to="." method="_on_Tank_shoot"]
 
