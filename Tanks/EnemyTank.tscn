@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 39.7858, 35.5505 )
+extents = Vector2( 31.405, 26.4959 )
 
 [node name="EnemyTank" instance=ExtResource( 1 )]
 
@@ -21,6 +21,8 @@ Bullet = ExtResource( 3 )
 max_speed = 200
 gun_cooldown = 0.5
 max_health = 50
+gun_shots = 1
+gun_spread = 0.2
 turret_speed = 1.0
 detect_radius = 200
 
@@ -33,7 +35,6 @@ _sections_unfolded = [ "Region" ]
 
 [node name="CollisionShape2D" parent="." index="1"]
 
-visible = false
 shape = SubResource( 1 )
 
 [node name="Turret" parent="." index="2"]
@@ -54,7 +55,7 @@ position = Vector2( 56.3361, 0 )
 texture = ExtResource( 4 )
 offset = Vector2( 30, 0 )
 region_rect = Rect2( 268, 89, 76, 41 )
-_sections_unfolded = [ "Offset", "Region" ]
+_sections_unfolded = [ "Offset", "Region", "Transform", "Visibility" ]
 
 [node name="DetectRadius" type="Area2D" parent="." index="4"]
 

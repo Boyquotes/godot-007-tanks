@@ -17,6 +17,7 @@ script = ExtResource( 2 )
 _sections_unfolded = [ "Collision" ]
 speed = 750
 damage = 10
+steer_force = 0
 lifetime = 1.0
 
 [node name="Sprite" parent="." index="0"]
