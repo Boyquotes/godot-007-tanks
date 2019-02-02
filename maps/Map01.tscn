@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://maps/Map.gd" type="Script" id=1]
 [ext_resource path="res://terrain/terrain_tiles.tres" type="TileSet" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Bullets/Missile.tscn" type="PackedScene" id=5]
 [ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=6]
 [ext_resource path="res://enviroment/Obstacle.tscn" type="PackedScene" id=7]
+[ext_resource path="res://items/Pickup.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -49,9 +50,7 @@ _sections_unfolded = [ "Cell", "Visibility" ]
 
 [node name="Player" parent="." index="1" instance=ExtResource( 3 )]
 
-position = Vector2( 2221.02, 1850.8 )
-gun_shots = 1
-gun_spread = 0.2
+position = Vector2( 2321.5, 1643.7 )
 
 [node name="Paths" type="Node2D" parent="." index="2"]
 
@@ -76,8 +75,8 @@ lookahead = 4.0
 
 position = Vector2( 0.0224609, 3.42468 )
 Bullet = ExtResource( 5 )
+gun_cooldown = 5.0
 gun_shots = 3
-gun_spread = 0.2
 detect_radius = 500
 
 [node name="Path2D2" type="Path2D" parent="Paths" index="1"]
@@ -99,17 +98,26 @@ lookahead = 4.0
 
 [node name="EnemyTank" parent="Paths/Path2D2/PathFollow2D" index="0" instance=ExtResource( 4 )]
 
-gun_shots = 1
-gun_spread = 0.2
-
 [node name="HUD" parent="." index="3" instance=ExtResource( 6 )]
 
 [node name="Obstacles" type="Node2D" parent="." index="4"]
+
+editor/display_folded = true
 
 [node name="Obstacle" parent="Obstacles" index="0" instance=ExtResource( 7 )]
 
 position = Vector2( 2136.4, 1282.37 )
 type = 13
+
+[node name="Items" type="Node2D" parent="." index="5"]
+
+[node name="Pickup" parent="Items" index="0" instance=ExtResource( 8 )]
+
+position = Vector2( 2541.18, 1637.72 )
+
+[node name="Pickup2" parent="Items" index="1" instance=ExtResource( 8 )]
+
+position = Vector2( 1903.47, 1857.13 )
 
 [connection signal="shoot" from="Player" to="." method="_on_Tank_shoot"]
 
