@@ -51,6 +51,7 @@ _sections_unfolded = [ "Cell", "Visibility" ]
 [node name="Player" parent="." index="1" instance=ExtResource( 3 )]
 
 position = Vector2( 2321.5, 1643.7 )
+offroad_friction = 0.75
 ammo = 10
 
 [node name="Paths" type="Node2D" parent="." index="2"]
@@ -77,7 +78,7 @@ lookahead = 4.0
 position = Vector2( 0.0224609, 3.42468 )
 Bullet = ExtResource( 5 )
 gun_cooldown = 5.0
-gun_shots = 3
+gun_shots = 2
 detect_radius = 500
 
 [node name="Path2D2" type="Path2D" parent="Paths" index="1"]
@@ -118,6 +119,14 @@ type = 1
 [node name="Pickup2" parent="Items" index="1" instance=ExtResource( 8 )]
 
 position = Vector2( 1903.47, 1857.13 )
+
+[node name="Pickup3" parent="Items" index="2" instance=ExtResource( 8 )]
+
+position = Vector2( 2309.48, 1980.16 )
+
+[node name="Pickup4" parent="Items" index="3" instance=ExtResource( 8 )]
+
+position = Vector2( 2063.41, 1990.41 )
 
 [connection signal="shoot" from="Player" to="." method="_on_Tank_shoot"]
 

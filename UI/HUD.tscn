@@ -27,7 +27,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 7 ) ]
 }
 
-[node name="HUD" type="CanvasLayer" index="0"]
+[node name="HUD" type="CanvasLayer"]
 
 layer = 1
 offset = Vector2( 0, 0 )

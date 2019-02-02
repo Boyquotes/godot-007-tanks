@@ -22,6 +22,7 @@ max_speed = 500
 rotation_speed = 1.0
 gun_cooldown = 0.4
 max_health = 100
+offroad_friction = null
 ammo = 10
 
 [node name="Body" parent="." index="0"]
