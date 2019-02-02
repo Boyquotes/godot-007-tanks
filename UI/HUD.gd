@@ -10,7 +10,10 @@ func _ready():
 #	print(get_node('/root/Map01/Player'))
 #	print(get_node('..//Player'))
 	get_node('..//Player').connect('health_changed', self, 'update_healthbar')
+	get_node('..//Player').connect('ammo_changed', self, 'update_ammo')
 	
+func update_ammo(value):
+	$Margin/Container/AmmoGauge.value = value
 
 func update_healthbar(value):
 	bar_texture = bar_green

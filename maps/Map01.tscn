@@ -51,6 +51,7 @@ _sections_unfolded = [ "Cell", "Visibility" ]
 [node name="Player" parent="." index="1" instance=ExtResource( 3 )]
 
 position = Vector2( 2321.5, 1643.7 )
+ammo = 10
 
 [node name="Paths" type="Node2D" parent="." index="2"]
 
@@ -102,8 +103,6 @@ lookahead = 4.0
 
 [node name="Obstacles" type="Node2D" parent="." index="4"]
 
-editor/display_folded = true
-
 [node name="Obstacle" parent="Obstacles" index="0" instance=ExtResource( 7 )]
 
 position = Vector2( 2136.4, 1282.37 )
@@ -113,7 +112,8 @@ type = 13
 
 [node name="Pickup" parent="Items" index="0" instance=ExtResource( 8 )]
 
-position = Vector2( 2541.18, 1637.72 )
+position = Vector2( 2541.18, 1635.67 )
+type = 1
 
 [node name="Pickup2" parent="Items" index="1" instance=ExtResource( 8 )]
 
